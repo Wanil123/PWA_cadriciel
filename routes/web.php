@@ -6,5 +6,7 @@
  * Format: url => [Controller, méthode]
  */
 $routes = [
-    "index" => ["DefautController", "index"],
+    "index" => ["UtilisateurController", "connecter"],
+    "compte-creer" => ["UtilisateurController", "create"],
+    "compte-enregistrer" => ["UtilisateurController", "store"],
 ];
