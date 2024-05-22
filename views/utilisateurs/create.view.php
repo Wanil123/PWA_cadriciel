@@ -4,7 +4,7 @@
         <div>
             <h1>Créez votre<span>compte</span></h1>
             <section>
-                <?php if(isset($_GET["infos_requises"])) : ?>
+                <?php if (isset($_GET["infos_requises"])) : ?>
                     <p class="msg erreur">
                         <span class="material-icons">
                             error
@@ -13,7 +13,7 @@
                     </p>
                 <?php endif; ?>
 
-                <?php if(isset($_GET["mdp_incorrect"])) : ?>
+                <?php if (isset($_GET["mdp_incorrect"])) : ?>
                     <p class="msg erreur">
                         <span class="material-icons">
                             error
@@ -22,13 +22,17 @@
                     </p>
                 <?php endif; ?>
 
+                <?php if (isset($_GET["echec_creation_compte"])) : ?>
+                    <p class="msg erreur">
+                        <span class="material-icons">
+                            error
+                        </span>
+                        La création du compte a échoué... Réessayez plus tard.
+                    </p>
+                <?php endif; ?>
+
                 <form action="compte-enregistrer" method="POST" enctype="multipart/form-data">
-                    <input 
-                        type="text" 
-                        name="prenom" 
-                        placeholder="Prénom" 
-                        autofocus
-                    >
+                    <input type="text" name="prenom" placeholder="Prénom" autofocus>
                     <input type="text" name="nom" placeholder="Nom">
                     <input type="email" name="courriel" placeholder="Courriel">
                     <input type="password" name="mdp" placeholder="Mot de passe">
